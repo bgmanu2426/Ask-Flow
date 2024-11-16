@@ -1,15 +1,15 @@
-import { Permission } from "node-appwrite";
+import { Permission, Role } from "node-appwrite";
 import { databases } from "./config";
 import { answerCollection, db } from "../name";
 
 export default async function createAnswerCollection() {
     // creating collection
     await databases.createCollection(db, answerCollection, answerCollection, [
-        Permission.read("any"),
-        Permission.create("user"),
-        Permission.read("user"),
-        Permission.update("user"),
-        Permission.delete("user")
+        Permission.read(Role.user('any')),
+        Permission.create(Role.user('user')),
+        Permission.read(Role.user('user')),
+        Permission.update(Role.user('user')),
+        Permission.delete(Role.user('user'))
     ]);
     console.log("Answer collection created");
 
