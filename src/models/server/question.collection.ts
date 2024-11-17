@@ -1,4 +1,4 @@
-import { IndexType, Permission, Role } from 'node-appwrite';
+import { Permission, Role } from 'node-appwrite';
 import { db, questionCollection } from '../name';
 import { databases } from './config';
 
@@ -22,6 +22,6 @@ export default async function createQuestionCollection() {
     ]);
 
     // create indexes
-    await databases.createIndex(db, questionCollection, "title", IndexType.Fulltext, ["title"], ['asc']);
-    await databases.createIndex(db, questionCollection, "content", IndexType.Fulltext, ["content"], ['asc']);
+    // await databases.createIndex(db, questionCollection, "title", IndexType.Fulltext, ["title"]);
+    // await databases.createIndex(db, questionCollection, "content", IndexType.Fulltext, ["content"]);
 }
