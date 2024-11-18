@@ -1,7 +1,7 @@
 import React from "react";
 import AnimatedGridPattern from "@/components/ui/animated-grid-pattern";
-import { cn } from "@/utils/cn";
 import Link from "next/link";
+import { cn } from "@/lib/utils";
 
 const Footer = () => {
     const items = [

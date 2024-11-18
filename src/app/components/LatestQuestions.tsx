@@ -3,7 +3,6 @@ import { answerCollection, db, questionCollection, voteCollection } from "@/mode
 import { databases, users } from "@/models/server/config";
 import { UserPrefs } from "@/store/Auth";
 import { Query } from "node-appwrite";
-import React from "react";
 
 const LatestQuestions = async () => {
     const questions = await databases.listDocuments(db, questionCollection, [
